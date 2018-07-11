@@ -37,7 +37,7 @@ class EagerIdentification
      */
     public function handle($request, Closure $next)
     {
-        /** @var Environment $env */
+        /** @var Environment $tenancy */
         $tenancy = $this->app->make(Environment::class);
 
         if (! $tenancy->isIdentified()) {
