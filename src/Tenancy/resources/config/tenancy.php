@@ -59,10 +59,5 @@ return [
         'auto-update' => env('TENANCY_DATABASE_AUTO_UPDATE', true),
 
         'auto-delete' => env('TENANCY_DATABASE_AUTO_DELETE', true),
-
-        /**
-         * Specify a Password Generator used for tenant database handling
-         */
-        'password-generator' => PasswordGenerator::class,
     ]
 ];
