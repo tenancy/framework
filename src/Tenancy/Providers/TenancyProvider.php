@@ -63,6 +63,7 @@ class TenancyProvider extends ServiceProvider
         return [
             Environment::class,
             ResolvesTenants::class,
+            ProvidesPassword::class,
         ];
     }
 }
