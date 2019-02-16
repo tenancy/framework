@@ -18,6 +18,8 @@ use Illuminate\Support\ServiceProvider;
 use Tenancy\Environment;
 use Tenancy\Identification\Contracts\ResolvesTenants;
 use Tenancy\Identification\TenantResolver;
+use Tenancy\Database\Contracts\ProvidesPassword;
+use Tenancy\Database\Generators\PasswordGenerator;
 
 class TenancyProvider extends ServiceProvider
 {
@@ -29,7 +31,8 @@ class TenancyProvider extends ServiceProvider
 
     public $singletons = [
         Environment::class => Environment::class,
-        ResolvesTenants::class => TenantResolver::class
+        ResolvesTenants::class => TenantResolver::class,
+        ProvidesPassword::class => PasswordGenerator::class,
     ];
 
     public function register()
