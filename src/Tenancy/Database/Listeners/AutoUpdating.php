@@ -21,7 +21,7 @@ class AutoUpdating extends DatabaseMutation
     public function handle(Updated $updated): ?array
     {
         if ($this->driver && config('tenancy.db.auto-update')) {
-            return $this->driver->update($updated->tenant);
+            $this->processRawStatements($this->driver->update($updated->tenant));
         }
 
         return null;
