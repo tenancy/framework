@@ -23,7 +23,5 @@ class AutoUpdating extends DatabaseMutation
         if ($this->driver && config('tenancy.db.auto-update')) {
             $this->processRawStatements($this->driver->update($updated->tenant));
         }
-
-        return null;
     }
 }

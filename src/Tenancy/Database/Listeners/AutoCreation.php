@@ -23,7 +23,5 @@ class AutoCreation extends DatabaseMutation
         if ($this->driver && config('tenancy.db.auto-create')) {
             $this->processRawStatements($this->driver->create($created->tenant));
         }
-
-        return null;
     }
 }

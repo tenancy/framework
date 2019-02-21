@@ -23,7 +23,5 @@ class AutoDeletion extends DatabaseMutation
         if ($this->driver && config('tenancy.db.auto-delete')) {
             $this->processRawStatements($this->driver->delete($deleted->tenant));
         }
-
-        return null;
     }
 }
