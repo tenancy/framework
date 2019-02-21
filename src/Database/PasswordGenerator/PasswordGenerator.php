@@ -7,8 +7,9 @@ use Tenancy\Database\Contracts\ProvidesPassword;
 class PasswordGenerator implements ProvidesPassword {
     public function generate(Tenant $tenant) : string {
         md5(sprintf(
-            '%s',
-            $tenant->getTenantKey()
+            '%s.%s',
+            $tenant->getTenantKey(),
+            config('tenancy.key')
         ));
     }
 }
