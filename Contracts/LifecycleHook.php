@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 /*
  * This file is part of the tenancy/tenancy package.
@@ -12,8 +12,21 @@
  * @see https://github.com/tenancy
  */
 
-namespace Tenancy\Tenant\Events;
+namespace Tenancy\Contracts;
 
-class Updated extends Event
+use Tenancy\Tenant\Events\Event;
+
+interface LifecycleHook
 {
+    public function for(Event $event);
+
+    public function fires(): bool;
+
+    public function queued(): bool;
+
+    public function priority(): int;
+
+    public function fire(): void;
+
+    public function queue(): ?string;
 }
