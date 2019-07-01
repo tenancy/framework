@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 /*
  * This file is part of the tenancy/tenancy package.
@@ -12,15 +12,8 @@
  * @see https://github.com/tenancy
  */
 
-namespace Tenancy\Lifecycle\Contracts;
+namespace Tenancy\Pipeline\Events;
 
-interface ResolvesHooks
+class Fired extends Event
 {
-    public function addHook($hook);
-
-    public function handle($event, callable $fire = null);
-
-    public function getHooks(): array;
-
-    public function setHooks(array $hooks);
 }

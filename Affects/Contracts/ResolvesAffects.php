@@ -12,15 +12,15 @@
  * @see https://github.com/tenancy
  */
 
-namespace Tenancy\Lifecycle\Contracts;
+namespace Tenancy\Affects\Contracts;
 
-interface ResolvesHooks
+interface ResolvesAffects
 {
-    public function addHook($hook);
+    public function addAffect($affect);
 
     public function handle($event, callable $fire = null);
 
-    public function getHooks(): array;
+    public function getAffects(): array;
 
-    public function setHooks(array $hooks);
+    public function setAffects(array $hooks);
 }
